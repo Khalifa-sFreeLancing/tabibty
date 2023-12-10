@@ -7,16 +7,18 @@ import { useNavigation } from '@react-navigation/native'
 
 const HomeCard = ({
     item,
-    lab
+    lab,
+    style
 }: {
     item?: any,
     lab?: boolean
+    style?:any
 }) => {
     const { navigate } = useNavigation<any>()
     return (
         <TouchableOpacity activeOpacity={.8} onPress={() => { navigate('Details') }}>
             <ImageBackground source={{ uri: lab ? 'https://aul.edu.ng/static/images/reviews/mls.jpg' : 'https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?size=338&ext=jpg&ga=GA1.1.1880011253.1699056000&semt=ais' }}
-                style={styles.container}
+                style={[styles.container,style]}
                 imageStyle={styles.imageStyle}
             >
                 <TouchableOpacity activeOpacity={1} style={styles.Heart}>

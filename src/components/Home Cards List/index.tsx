@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 import HomeCard from '../Home Card'
 import styles from './styles';
@@ -11,21 +11,15 @@ const HomeCardsList = ({
     lab?: boolean;
 }) => {
     return (
-        <FlatList
-            data={data}
-            numColumns={3}
-            columnWrapperStyle={styles.columnWrapperStyle}
-            style={styles.FlatList}
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item }) => {
+        <View style={styles.Container}>
+            {data?.map((item: any) => {
                 if (!item?.empty) {
-                    return <HomeCard lab={lab} item={item} />
+                    return <HomeCard style={styles.HomeCard} lab={lab} item={item} />
                 } else {
                     return <View style={styles.invisible} />;
                 }
-
-            }}
-        />
+            })}
+        </View>
     )
 }
 

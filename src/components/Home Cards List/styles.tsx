@@ -3,13 +3,15 @@ import { Colors } from "theme/colors";
 import Fonts from "theme/fonsFamily";
 
 const styles = StyleSheet.create({
-    columnWrapperStyle: {
-        marginBottom: 15,
+    Container: {
+        flexDirection: 'row-reverse',
+        flexWrap: 'wrap',
+        width: '100%',
         justifyContent: 'space-between',
-    },
-    FlatList: {
-        // direction: 'rtl',
         marginTop: 20,
+    },
+    HomeCard: {
+        marginBottom: 15,
     },
     invisible: {
         width: 110
