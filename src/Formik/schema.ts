@@ -21,7 +21,9 @@ export const RegistSchema = Yup.object().shape({
     Email: Yup.string().required('من فضلك أدخلي بريدك الإلكتروني').matches(EmailReg, 'من فضلك أدخلي بريد صحيح'),
     FullName: Yup.string().required('من فضلك أدخلي الأسم'),
     Password: Yup.string().required('من فضلك أدخلي كلمه المرور').min(8, 'كلمه المرور لا يجب أن تقل عن ٨ أحرف أو أرقام'),
-    ConfirmPassword: Yup.string().required('من فضلك أدخلي كلمه المرور').min(8, 'كلمه المرور لا يجب أن تقل عن ٨ أحرف أو أرقام').oneOf([Yup.ref('Password'), null], "كلمتا المرور غير متطابقا")
+    ConfirmPassword: Yup.string().required('من فضلك أدخلي كلمه المرور').min(8, 'كلمه المرور لا يجب أن تقل عن ٨ أحرف أو أرقام').oneOf([Yup.ref('Password'), null], "كلمتا المرور غير متطابقا"),
+    City:  Yup.object().required('من فضلك أختري المدينه'),
+    Government:  Yup.object().required('من فضلك أختري المحافظه'),
 })
 
 export const ResetSchema = Yup.object().shape({

@@ -160,13 +160,66 @@ const doResendVerify: any = createAsyncThunk<any, any, any>(
     }
   }
 )
+
+const doGetGovernorates: any = createAsyncThunk<any, any, any>(
+  'auth/governorates',
+  async (_: any, thunkApi: any) => {
+    try {
+      const response = await AuthAPI.governorates();
+      // alert(JSON.stringify(response.data))
+      if (
+        response.status == 400 ||
+        response.status == 401 ||
+        response.status == 422 ||
+        response.status == 404 ||
+        response.status == 403 ||
+        response.status == 500 ||
+        response.status == 409 ||
+        response.status == 503
+      ) {
+        throw response;
+      }
+      return response.data
+    } catch (error) {
+      return thunkApi.rejectWithValue(error)
+    }
+  }
+)
+
+const doGetCities: any = createAsyncThunk<any, any, any>(
+  'auth/cities',
+  async (id: any, thunkApi: any) => {
+    try {
+      const response = await AuthAPI.cities(id);
+      // alert(JSON.stringify(response.data))
+      if (
+        response.status == 400 ||
+        response.status == 401 ||
+        response.status == 422 ||
+        response.status == 404 ||
+        response.status == 403 ||
+        response.status == 500 ||
+        response.status == 409 ||
+        response.status == 503
+      ) {
+        throw response;
+      }
+      return response.data
+    } catch (error) {
+      return thunkApi.rejectWithValue(error)
+    }
+  }
+)
 const AuthThunks = {
   doSignIn,
   doSignUp,
   doVerify,
   doForgetPassword,
   doResetPassword,
-  doResendVerify
+  doResendVerify,
+
+  doGetGovernorates,
+  doGetCities
 };
 
 export default AuthThunks;

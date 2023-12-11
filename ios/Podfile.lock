@@ -505,6 +505,9 @@ PODS:
     - React-jsi (= 0.72.6)
     - React-logger (= 0.72.6)
     - React-perflogger (= 0.72.6)
+  - rn-skeleton-placeholder (0.2.4):
+    - RCT-Folly (= 2021.07.22.00)
+    - React-Core
   - RNCAsyncStorage (1.21.0):
     - React-Core
   - RNDeviceInfo (10.12.0):
@@ -601,6 +604,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - rn-skeleton-placeholder (from `../node_modules/rn-skeleton-placeholder`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
@@ -721,6 +725,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  rn-skeleton-placeholder:
+    :path: "../node_modules/rn-skeleton-placeholder"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNDeviceInfo:
@@ -799,6 +805,7 @@ SPEC CHECKSUMS:
   React-runtimescheduler: f23e337008403341177fc52ee4ca94e442c17ede
   React-utils: fa59c9a3375fb6f4aeb66714fd3f7f76b43a9f16
   ReactCommon: dd03c17275c200496f346af93a7b94c53f3093a4
+  rn-skeleton-placeholder: 3b03ddcb9db4f514b0a5d9bb6303e78f3ce2bdfd
   RNCAsyncStorage: 618d03a5f52fbccb3d7010076bc54712844c18ef
   RNDeviceInfo: db5c64a060e66e5db3102d041ebe3ef307a85120
   RNGestureHandler: 32a01c29ecc9bb0b5bf7bc0a33547f61b4dc2741
@@ -813,4 +820,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 92c5259d2f2782f03868c35f588c4eb6d539508e
 
-COCOAPODS: 1.14.2
+COCOAPODS: 1.14.3

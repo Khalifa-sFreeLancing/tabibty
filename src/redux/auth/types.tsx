@@ -12,6 +12,18 @@ interface userState {
         governorate: string;
         id: number
     },
+    governorates: [
+        {
+            id: number;
+            governorate_name_ar: string;
+        },
+    ]
+    cities: [
+        {
+            governorate_id: number;
+            city_name_ar: string;
+        },
+    ]
 }
 
 export const initialState: userState = {
@@ -21,4 +33,6 @@ export const initialState: userState = {
     isAuth: false,
     currentUser: {
     },
+    cities:[],
+    governorates:[]
 }

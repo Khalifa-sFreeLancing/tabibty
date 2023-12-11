@@ -13,6 +13,9 @@ export const regist_initial_values = {
     Email: '',
     Password: '',
     ConfirmPassword: '',
+    City: '',
+    Government: '',
+    gender: '',
 };
 
 export const reset_initial_values = {

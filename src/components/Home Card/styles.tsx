@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 7
     },
     Title: {
-        fontSize: 12,
+        fontSize: 11,
         fontWeight: '600',
         color: Colors().white,
         fontFamily: Fonts.Messiri,

@@ -30,7 +30,12 @@ import Arrow from './Arrow.svg'
 import Camera from './Camera.svg'
 import Search from './Search.svg'
 
+import ContactUs from './ContactUs.svg'
+import Privcy from './Privcy.svg'
+import LogOut from './LogOut.svg'
 
+import Earth from './Earth.svg'
+import City from './City.svg'
 
 export {
     Mail,
@@ -63,5 +68,12 @@ export {
 
     Arrow,
     Camera,
-    Search
+    Search,
+
+    ContactUs,
+    Privcy,
+    LogOut,
+
+    Earth,
+    City
 }

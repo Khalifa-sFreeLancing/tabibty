@@ -41,7 +41,6 @@ const slice = createSlice({
       // AsyncStorage.setItem('USER_TOKEN', action.payload.data?.token)
       // state.currentUser = action.payload?.data
       state.signedUp = true
-      console.log(action.payload)
       Toast.show({
         type: "success",
         text1: action.payload.message,
@@ -102,6 +101,30 @@ const slice = createSlice({
         text1: action.payload.data.message,
       })
     })
+
+
+    //doGetGovernorates
+    builder.addCase(thunks.doGetGovernorates.fulfilled, (state, action) => {
+      state.governorates = action.payload.data
+    });
+    builder.addCase(thunks.doGetGovernorates.rejected, (state, action: any) => {
+      Toast.show({
+        type: "error",
+        text1: action.payload.data.message,
+      })
+    })
+
+
+    //doGetCities
+    builder.addCase(thunks.doGetCities.fulfilled, (state, action) => {
+      state.cities = action.payload.data
+    });
+    builder.addCase(thunks.doGetCities.rejected, (state, action: any) => {
+      Toast.show({
+        type: "error",
+        text1: action.payload.data.message,
+      })
+    })
   }
 })
 
@@ -119,4 +142,6 @@ export const selectVerivied = (state: RootState) => state.auth.verivied;
 export const selectVerivied2 = (state: RootState) => state.auth.verivied2;
 export const selectSignedUp = (state: RootState) => state.auth.signedUp;
 export const selectCurrentUser = (state: RootState) => state.auth.currentUser;
+export const selectCities = (state: RootState) => state.auth.cities;
+export const selectGovernorates = (state: RootState) => state.auth.governorates;
 export default AuthSlice;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import styles from './styles';
 import { Colors } from 'theme/colors';
@@ -7,14 +7,14 @@ import FavouriteScreen from 'screens/App/Favourite';
 import { ActiveHome, DeActiveHome, ActiveSearch, DeActiveSearch, ActiveSave, DeActiveSave, ActiveFavourite, DeActiveFavourite, DeActiveMore } from 'assets/svgs';
 import BookmarkScreen from 'screens/App/Bookmark';
 import HomeScreen from 'screens/App/Home/Main Home';
-import ProfileScreen from 'screens/App/Drawer/Profile';
 import SearchSreen from 'screens/App/Search';
 
 
 const BottomTab = createBottomTabNavigator();
 
 
-export default function BottomTabs() {
+export default function BottomTabs(props: any) {
+
     return (
         <BottomTab.Navigator
             initialRouteName='Home'
@@ -24,9 +24,15 @@ export default function BottomTabs() {
                 tabBarInactiveTintColor: Colors().white,
                 tabBarStyle: styles.tabBarStyle,
             })}>
-            <BottomTab.Screen name={"Moree"} component={FavouriteScreen} options={{
+            <BottomTab.Screen name={"Moree"} component={''} options={{
                 title: '',
-                tabBarIcon: () => (<DeActiveMore />)
+                tabBarIcon: () => (
+                    <TouchableOpacity activeOpacity={.8} onPress={() => {
+                        props.navigation.openDrawer();
+                    }}>
+                        <DeActiveMore />
+                    </TouchableOpacity>
+                )
             }}></BottomTab.Screen>
 
             <BottomTab.Screen name={"Favourite"} component={FavouriteScreen} options={{

@@ -7,6 +7,9 @@ const resendVerify = (data: any) => api.post('api/v1/auth/verify/resend', data);
 const forgetPassword = (data: any) => api.post('api/v1/auth/forget-password', data);
 const resetPassword = (data: any) => api.put('api/v1/auth/reset-password', data);
 
+const governorates = () => api.get('api/v1/area/governorates?lang=ar');
+const cities = (id: number) => api.get(`api/v1/area/governorates/cities?lang=ar&governorateId=${id}`,);
+
 
 const AuthAPI = {
   signIn,
@@ -14,7 +17,10 @@ const AuthAPI = {
   verify,
   resendVerify,
   forgetPassword,
-  resetPassword
+  resetPassword,
+
+  governorates,
+  cities
 };
 
 export default AuthAPI;

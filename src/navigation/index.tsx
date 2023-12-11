@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import BottomTabs from './BottomTab/MainBottomTabs';
 import AuthStackScreens from './Auth';
 import { useSelector } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
@@ -10,7 +9,10 @@ import ReviewScreen from 'screens/App/Home/Reviews';
 import MoreAdviceScreen from 'screens/App/Home/More Advice';
 import MoreScreen from 'screens/App/Home/More ';
 import { selectIsAuth } from 'src/redux/auth';
-
+import AppDrawer from './Drawer/Drawer';
+import ContactUsScreen from 'screens/App/Drawer/Contact Us';
+import PrivacyAndPolicyScreen from 'screens/App/Drawer/Privacy and Policy';
+import ProfileScreen from 'screens/App/Drawer/Profile';
 
 export type RootStack = {
     Splash: undefined;
@@ -22,6 +24,9 @@ export type RootStack = {
     Review: undefined;
     MoreAdvice: undefined;
     More: undefined;
+    ContactUs: undefined;
+    Privcy: undefined;
+    Profile: undefined;
 };
 
 const RootStack = createNativeStackNavigator<RootStack>();
@@ -44,16 +49,16 @@ const RootStackScreens = () => {
 
                         :
                         <>
-                            <RootStack.Screen name="App" component={BottomTabs} />
-
+                            <RootStack.Screen name="App" component={AppDrawer} />
 
                             <RootStack.Screen name="Details" component={DetailScreen} />
                             <RootStack.Screen name="Experience" component={ExperienceScreen} />
                             <RootStack.Screen name="Review" component={ReviewScreen} />
                             <RootStack.Screen name="MoreAdvice" component={MoreAdviceScreen} />
                             <RootStack.Screen name="More" component={MoreScreen} />
-
-
+                            <RootStack.Screen name="ContactUs" component={ContactUsScreen} />
+                            <RootStack.Screen name="Privcy" component={PrivacyAndPolicyScreen} />
+                            <RootStack.Screen name="Profile" component={ProfileScreen} />
                         </>
                 }
 

@@ -13,6 +13,11 @@ const styles = StyleSheet.create({
     },
     invisible: {
         width: 110
+    },
+    Skeleton: {
+        borderRadius: 14,
+        backgroundColor: Colors().border,
+        marginTop: 20
     }
 })
 
