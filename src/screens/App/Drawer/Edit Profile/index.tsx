@@ -7,10 +7,18 @@ import { ProfileBackground } from 'assets/images'
 import Input from './components/Input'
 import CustomButton from 'components/Button'
 import { ScrollView } from 'react-native'
-import { Camera } from 'assets/svgs'
+import { Camera, User } from 'assets/svgs'
+import { useSelector } from 'react-redux'
+import { selectCurrentUser } from 'src/redux/auth'
 
 const EditProfileScreen = () => {
-    const [{ name, age, gender, area, government }, setData] = React.useState({ name: 'أحمد خليفه', age: '23', gender: 'ذكر', area: 'ابوقير', government: 'الأسكندرية' })
+    const USER = useSelector(selectCurrentUser)
+    const [{ name, gender, city, government }, setData] = React.useState({
+        name: USER?.fullname,
+        gender: USER?.gender,
+        city: USER?.city,
+        government: USER?.governorate
+    })
     return (
         <SafeAreaView edges={['top']} style={styles.Container}>
             <ScrollView>
@@ -27,9 +35,8 @@ const EditProfileScreen = () => {
                 <Text style={styles.Email}>Ahmedkhalifa20199@gmail.com</Text>
 
                 <Input Title='الإسم' Value={name} />
-                <Input Title='العمر' Value={age} />
                 <Input Title='الجنس' Value={gender} />
-                <Input Title='المنطقة' Value={area} />
+                <Input Title='المنطقة' Value={city} />
                 <Input Title='المحافظة' Value={government} />
 
                 <CustomButton onPress={() => { }} style={styles.Button} title='حفظ' />

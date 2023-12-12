@@ -21,13 +21,9 @@ const slice = createSlice({
   extraReducers: builder => {
     //doSignIn
     builder.addCase(thunks.doSignIn.fulfilled, (state, action) => {
-      // AsyncStorage.setItem('USER_TOKEN', action.payload.data?.token)
+      AsyncStorage.setItem('USER_TOKEN', action.payload.data?.token)
       state.currentUser = action.payload?.data
       state.isAuth = true
-      Toast.show({
-        type: "success",
-        text1: action.payload.message,
-      })
     });
     builder.addCase(thunks.doSignIn.rejected, (state, action: any) => {
       Toast.show({

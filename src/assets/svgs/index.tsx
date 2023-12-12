@@ -36,6 +36,9 @@ import LogOut from './LogOut.svg'
 
 import Earth from './Earth.svg'
 import City from './City.svg'
+import EmptyBookmark from './EmptyBookmark.svg'
+
+
 
 export {
     Mail,
@@ -75,5 +78,6 @@ export {
     LogOut,
 
     Earth,
-    City
+    City,
+    EmptyBookmark
 }

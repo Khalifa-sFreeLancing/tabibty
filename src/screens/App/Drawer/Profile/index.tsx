@@ -8,8 +8,13 @@ import Input from './components/Input'
 import { ScrollView } from 'react-native'
 import Header from 'components/Header'
 import CustomButton from 'components/Button'
+import { useSelector } from 'react-redux'
+import { selectCurrentUser } from 'src/redux/auth'
+import { useNavigation } from '@react-navigation/native'
 
 const ProfileScreen = () => {
+    const { navigate } = useNavigation<any>()
+    const USER = useSelector(selectCurrentUser)
     return (
         <SafeAreaView edges={['top']} style={styles.Container}>
             <ScrollView>
@@ -23,15 +28,15 @@ const ProfileScreen = () => {
                 </ImageBackground>
                 <Image style={styles.Avatar} source={ProfileBackground} />
 
-                <Text style={styles.USERNAME}>أحمد خليفه</Text>
-                <Text style={styles.Email}>Ahmedkhalifa20199@gmail.com</Text>
+                <Text style={styles.USERNAME}>{USER?.fullname}</Text>
+                <Text style={styles.Email}>{USER?.email}</Text>
 
-                <Input Title='العمر' Value='23' />
-                <Input Title='الجنس' Value='23' />
-                <Input Title='المنطقة' Value='23' />
-                <Input Title='المحافظة' Value='23' />
+                {/* <Input Title='العمر' Value={USER?.} /> */}
+                <Input Title='الجنس' Value={USER?.gender} />
+                <Input Title='المحافظة' Value={USER?.governorate} />
+                <Input Title='المدينه' Value={USER?.city} />
 
-                <CustomButton onPress={() => { }} style={styles.Button} title='تعديل' />
+                <CustomButton onPress={() => { navigate('EditProfile') }} style={styles.Button} title='تعديل' />
             </ScrollView>
         </SafeAreaView>
     )

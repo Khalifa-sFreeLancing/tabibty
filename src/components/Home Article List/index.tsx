@@ -1,8 +1,10 @@
 import { FlatList } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './styles';
 import ArticleCard from '../Article Card';
 import { SkeletonPlaceholder } from 'rn-skeleton-placeholder';
+import AppThunks from 'src/redux/app/thunks';
+import { useAppDispatch } from 'src/redux/store';
 
 const ArticleCardsList = ({
     data,
@@ -11,6 +13,10 @@ const ArticleCardsList = ({
     data?: any;
     isLoading?: boolean;
 }) => {
+    const dispatch = useAppDispatch()
+    useEffect(() => {
+        dispatch(AppThunks.doGetSaves())
+    }, [])
     return (
         isLoading ?
             <FlatList

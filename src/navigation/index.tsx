@@ -13,6 +13,7 @@ import AppDrawer from './Drawer/Drawer';
 import ContactUsScreen from 'screens/App/Drawer/Contact Us';
 import PrivacyAndPolicyScreen from 'screens/App/Drawer/Privacy and Policy';
 import ProfileScreen from 'screens/App/Drawer/Profile';
+import EditProfileScreen from 'screens/App/Drawer/Edit Profile';
 
 export type RootStack = {
     Splash: undefined;
@@ -27,6 +28,7 @@ export type RootStack = {
     ContactUs: undefined;
     Privcy: undefined;
     Profile: undefined;
+    EditProfile: undefined;
 };
 
 const RootStack = createNativeStackNavigator<RootStack>();
@@ -59,7 +61,8 @@ const RootStackScreens = () => {
                             <RootStack.Screen name="ContactUs" component={ContactUsScreen} />
                             <RootStack.Screen name="Privcy" component={PrivacyAndPolicyScreen} />
                             <RootStack.Screen name="Profile" component={ProfileScreen} />
-                        </>
+                            <RootStack.Screen name="EditProfile" component={EditProfileScreen} />
+                              </>
                 }
 
             </RootStack.Navigator>
